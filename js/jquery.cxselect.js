@@ -323,13 +323,21 @@
       };
 
       for (var i = 0, l = data.length; i < l; i++) {
-        _html += '<option value="' + String(data[i][_jsonValue]) + '">' + String(data[i][_jsonName]) + '</option>';
+        if (l == 1) {
+          _html += '<option selected value="' + String(data[i][_jsonValue]) + '">' + String(data[i][_jsonName]) + '</option>';
+        } else {
+          _html += '<option value="' + String(data[i][_jsonValue]) + '">' + String(data[i][_jsonName]) + '</option>';
+        }
       };
 
     // 数组即为值的数据
     } else {
       for (var i = 0, l = data.length; i < l; i++) {
-        _html += '<option value="' + String(data[i]) + '">' + String(data[i]) + '</option>';
+        if (l == 1) {
+          _html += '<option selected value="' + String(data[i]) + '">' + String(data[i]) + '</option>';
+        } else {
+          _html += '<option value="' + String(data[i]) + '">' + String(data[i]) + '</option>';
+        }
       };
     };
 
